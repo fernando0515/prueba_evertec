@@ -7,7 +7,7 @@ Clonar repositorio
 ```sh
 $ git clone https://github.com/fernando0515/prueba_evertec 
 ```
-Ingresar al directorio para actualzar dependencias
+Ingresar al directorio para actualizar dependencias
 ```sh
 composer update
 ```
