@@ -1,15 +1,9 @@
-<html>
+@extends('layout.master')
 
-<head>
-    <title>Pago PSE</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+@section('title') Pago PSE @stop
 
-</head>
-
-<body>
-    <div class="container contact-form">
+@section('content')
+   <div class="container contact-form">
 
         <div class="contact-image">
             <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
@@ -140,7 +134,4 @@
 
 
     @endif
-</body>
-
-
-</html>
+@stop

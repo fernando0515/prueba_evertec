@@ -1,10 +1,9 @@
-<html>
+@extends('layout.master')
 
-<head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-</head>
+@section('title') Pago por Webcheckout @stop
 
-<body>
+@section('content')
+
     <div class="container contact-form">
 
         <div class="contact-image">
@@ -86,8 +85,4 @@
 
     @endif
 
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</body>
-
-</html>
+@stop
