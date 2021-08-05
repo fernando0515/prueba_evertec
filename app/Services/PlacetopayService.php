@@ -20,13 +20,12 @@ class PlacetopayService
             'rest' => [
                 'timeout' => 45, // (optional) 15 by default
                 'connect_timeout' => 30, // (optional) 5 by default
-            ]
+            ],
         ]);
     }
 
     public function createSession(PlacetopaySessionData $placetopaySessionData)
     {
-
         $request = [
             'payment' => [
                 'reference' => $placetopaySessionData->reference,
@@ -37,7 +36,7 @@ class PlacetopayService
                 ],
             ],
             'expiration' => date('c', strtotime('+2 days')),
-            'returnUrl' => route('app.index') . '?idForm=' . $placetopaySessionData->idForm,
+            'returnUrl' => route('app.index').'?idForm='.$placetopaySessionData->idForm,
             'ipAddress' => $placetopaySessionData->ip,
             'userAgent' => $placetopaySessionData->userAgent,
         ];

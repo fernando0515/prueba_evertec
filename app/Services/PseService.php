@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services;
 
 use App\DTO\PlacetopaySessionData;
@@ -19,15 +20,14 @@ class PseService
 
         $this->auth = [
             'login' => $login,
-            'tranKey' => sha1($seed . $secretKey),
+            'tranKey' => sha1($seed.$secretKey),
             'seed' => $seed,
         ];
     }
 
-
     public function getBankList()
     {
-        if(Cache::has('bankList')){
+        if (Cache::has('bankList')) {
             return Cache::get('bankList');
         }
 
@@ -42,12 +42,12 @@ class PseService
 
     public function createTransaction(PlacetopaySessionData $placetopaySessionData)
     {
-            return $this->client->createTransaction([
+        return $this->client->createTransaction([
                 'auth' => $this->auth,
                 'transaction' => [
                     'bankCode' => $placetopaySessionData->bank,
                     'bankInterface' => $placetopaySessionData->person,
-                    'returnURL' => route('app.pse') . '?idForm=' . $placetopaySessionData->idForm,
+                    'returnURL' => route('app.pse').'?idForm='.$placetopaySessionData->idForm,
                     'reference' => $placetopaySessionData->reference,
                     'description' => $placetopaySessionData->description,
                     'currency' => $placetopaySessionData->currency,
@@ -61,7 +61,7 @@ class PseService
                         'emailAddress' => $placetopaySessionData->email,
                         'lastName' => $placetopaySessionData->surname,
                     ],
-                ]
+                ],
             ])->createTransactionResult;
     }
 
@@ -73,10 +73,4 @@ class PseService
         ])
             ->getTransactionInformationResult;
     }
-
 }
-
-
-
-
-

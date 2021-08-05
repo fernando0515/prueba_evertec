@@ -27,7 +27,7 @@ class CreatePseSessionRequest extends FormRequest
         return [
             'description' => ['nullable', 'string', 'max:255'],
             'currency' => ['required', 'string', 'min:3', 'max:3'],
-            'amount' => ['required', 'numeric' ],
+            'amount' => ['required', 'numeric'],
             'idForm' => ['required'],
             'person' => ['required'],
             'bank' => ['required', 'min:1'],

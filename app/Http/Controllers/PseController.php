@@ -17,7 +17,7 @@ class PseController extends Controller
 
         $data = null;
 
-        if($request->has('idForm')){
+        if ($request->has('idForm')) {
             $data = $pseService->getTransactionInformation(
                 session($request->input('idForm'))
             );

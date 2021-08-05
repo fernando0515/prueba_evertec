@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(PlacetopayService::class, function (Application $application) {
-                return new PlacetopayService(
+            return new PlacetopayService(
                     config('placetopay.login'),
                     config('placetopay.secretkey'),
                     config('placetopay.baseurl'),
@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(PseService::class, function (Application $application) {
-                return new PseService(
+            return new PseService(
                     config('placetopay.login'),
                     config('placetopay.secretkey'),
                     config('placetopay.baseurl_pse'),
@@ -40,6 +40,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
     }
 }

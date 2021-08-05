@@ -24,8 +24,6 @@ class PlacetopaySessionData extends DataTransferObject
     public ?string $surname;
     public ?string $email;
 
-
-
     public static function makeData(FormRequest $request)
     {
         return new self([
@@ -41,7 +39,7 @@ class PlacetopaySessionData extends DataTransferObject
             'document' => $request->input('document'),
             'documentType' => $request->input('documentType'),
             'name' => $request->input('name'),
-            'surname' => $request-> input('surname'),
+            'surname' => $request->input('surname'),
             'email' => $request->input('email'),
         ]);
     }

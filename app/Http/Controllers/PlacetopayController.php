@@ -6,7 +6,7 @@ use App\DTO\PlacetopaySessionData;
 use App\Http\Requests\CreateSessionRequest;
 use App\Services\PlacetopayService;
 use Illuminate\Http\Request;
-use \Illuminate\Support\Str;
+use Illuminate\Support\Str;
 
 class PlacetopayController extends Controller
 {
@@ -16,12 +16,11 @@ class PlacetopayController extends Controller
 
         $data = null;
 
-        if($request->has('idForm')){
+        if ($request->has('idForm')) {
             $data = $placetopayService->fetchSession(
                  session($request->input('idForm'))
             );
         }
-
 
         return view('placetopay.index', compact('idForm', 'data'));
     }
@@ -29,10 +28,6 @@ class PlacetopayController extends Controller
     public function store(CreateSessionRequest $request, PlacetopayService $placetopay)
     {
         $session = $placetopay->createSession(PlacetopaySessionData::makeData($request));
-
-        if(! $session['success']){
-            // TODO
-        }
 
         session([$request->input('idForm') => $session['sessionId']]);
 
